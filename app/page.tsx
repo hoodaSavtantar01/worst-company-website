@@ -157,13 +157,13 @@ export default function Home() {
         <div
           ref={photoBgRef}
           aria-hidden="true"
+          className="hero-photo-bg"
           style={{
             position: 'absolute',
             inset: '-4% -3%',
             zIndex: 1,
             backgroundImage: 'url(/assets/hero.jpg)',
             backgroundSize: 'cover',
-            backgroundPosition: 'right center',
             filter: 'brightness(1.1) contrast(1.04) saturate(1.05)',
             transformOrigin: '75% 40%',
             willChange: 'transform',
@@ -185,11 +185,7 @@ export default function Home() {
         />
 
         {/* Veil */}
-        <div aria-hidden="true" style={{
-          position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none',
-          background: `linear-gradient(90deg, rgba(8,8,9,0.92) 0%, rgba(8,8,9,0.55) 30%, rgba(8,8,9,0.05) 58%, rgba(8,8,9,0) 100%),
-            linear-gradient(180deg, rgba(8,8,9,0) 45%, rgba(8,8,9,0.7) 100%)`,
-        }} />
+        <div aria-hidden="true" className="hero-veil" />
 
         {/* Bottom overlay */}
         <div aria-hidden="true" style={{
@@ -457,8 +453,9 @@ function FutureFrame() {
   return (
     <div
       ref={frameRef}
+      className="future-frame"
       style={{
-        position: 'relative', marginTop: 28, aspectRatio: '21/9',
+        position: 'relative', marginTop: 28,
         borderRadius: 2, overflow: 'hidden', isolation: 'isolate',
         cursor: 'not-allowed',
         background: `radial-gradient(120% 80% at 20% 20%, rgba(255,255,255,0.06), transparent 60%),
@@ -484,10 +481,7 @@ function FutureFrame() {
         backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)', zIndex: 1,
       }} />
       {/* content */}
-      <div style={{
-        position: 'relative', zIndex: 2, height: '100%',
-        display: 'grid', gridTemplateRows: 'auto 1fr auto', padding: '36px 40px', color: '#f6f3ee',
-      }}>
+      <div className="future-frame-body">
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: 10 }}>
           <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--color-primary)', display: 'inline-block', animation: 'futurePulse 2.4s ease-out infinite' }} />
           Future release · locked

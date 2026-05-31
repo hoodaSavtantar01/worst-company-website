@@ -460,6 +460,21 @@ p { margin: 0; }
    (Move grid-template-columns here so @media overrides work)
    ========================================================================= */
 
+/* — Hero ----------------------------------------------------------------- */
+.hero-photo-bg { background-position: right center; }
+.hero-veil {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(8,8,9,0.92) 0%, rgba(8,8,9,0.55) 30%, rgba(8,8,9,0.05) 58%, rgba(8,8,9,0) 100%),
+    linear-gradient(180deg, rgba(8,8,9,0) 45%, rgba(8,8,9,0.7) 100%);
+}
+.future-frame { aspect-ratio: 21/9; }
+.future-frame-body {
+  position: relative; z-index: 2; height: 100%;
+  display: grid; grid-template-rows: auto 1fr auto;
+  padding: 36px 40px; color: #f6f3ee;
+}
+
 /* — Home ----------------------------------------------------------------- */
 .hero-headline { max-width: min(640px, 54%); }
 .drop-head { display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 32px; margin-bottom: 40px; }
@@ -513,6 +528,20 @@ p { margin: 0; }
   .btn { height: 44px; padding: 0 18px; font-size: 14px; }
   .countdown .cell { padding: 14px 6px 12px; }
   .countdown .lab { font-size: 9px; margin-top: 6px; }
+
+  /* Hero */
+  .hero-photo-bg { background-position: right top; }
+  .hero-veil {
+    background: linear-gradient(180deg,
+      rgba(8,8,9,0) 0%,
+      rgba(8,8,9,0.08) 28%,
+      rgba(8,8,9,0.72) 52%,
+      rgba(8,8,9,0.93) 72%,
+      rgba(8,8,9,0.98) 100%
+    );
+  }
+  .future-frame { aspect-ratio: auto; min-height: 340px; }
+  .future-frame-body { padding: 22px 20px; }
 
   /* Home */
   .hero-headline { max-width: 100%; }
