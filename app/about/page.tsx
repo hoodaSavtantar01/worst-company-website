@@ -144,7 +144,7 @@ export default function AboutPage() {
             A small atelier<br/>making <em style={{ fontStyle: 'italic', color: 'var(--color-primary)' }}>slow</em> shirts<br/>in a fast country.
           </h1>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'end', paddingBottom: 56 }} className="about-hero-grid">
+          <div className="about-hero-grid">
             <div
               ref={heroPhotoRef}
               className="ph photo"
@@ -188,14 +188,14 @@ export default function AboutPage() {
 
       {/* Story */}
       <section style={{ background: '#15140f' }}>
-        <div style={{ maxWidth: 'var(--page-max)', margin: '0 auto', padding: '120px var(--gutter)', display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80 }}>
+        <div className="story-grid">
           <div>
             <div className="eyebrow" data-reveal>How it began</div>
             <h2 data-reveal style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(40px,5vw,76px)', lineHeight: 0.98, letterSpacing: '-0.02em', margin: '16px 0 0' }}>
               An apology<br/>that became a<br/><em style={{ fontStyle: 'italic', color: 'var(--color-primary)' }}>company.</em>
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+          <div className="story-copy">
             <div>
               <p data-reveal style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--color-body)', marginBottom: 14 }}>
                 In the autumn of 2024, Rhea botched a wedding-gift shirt for her oldest friend: misspelled
@@ -237,7 +237,7 @@ export default function AboutPage() {
             We are slow, opinionated, and have made every mistake at least once. These four we&apos;ve stopped making.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 32, marginTop: 56 }}>
+        <div className="values-grid">
           {VALUES.map((v) => (
             <div key={v.num} className="value" style={{ borderTop: '1px solid var(--color-hairline)', paddingTop: 24 }}>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-muted)' }}>{v.num}</div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
 
       {/* Stats */}
       <section ref={statsRef} style={{ background: '#000', color: '#fff' }}>
-        <div style={{ maxWidth: 'var(--page-max)', margin: '0 auto', padding: '80px var(--gutter)', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 32 }}>
+        <div className="stats-grid">
           {STATS.map((stat) => (
             <div key={stat.lab} className="stat">
               <div
@@ -278,7 +278,7 @@ export default function AboutPage() {
             A studio at an undisclosed address. Online · open 24/7. Tea always on.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginTop: 40 }}>
+        <div className="studio-grid">
           <div className="ph photo" style={{ aspectRatio: '3/4', backgroundImage: 'url(/assets/studio.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="ph photo" style={{ aspectRatio: '3/4', backgroundImage: 'url(/assets/hands-at-work.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="ph photo" style={{ aspectRatio: '3/4', backgroundImage: 'url(/assets/thread-wall.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
@@ -299,7 +299,7 @@ export default function AboutPage() {
             we&apos;d rather not trade for a portrait on a website.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, marginTop: 40 }}>
+        <div className="team-grid">
           {TEAM.map((m) => (
             <div key={m.name} className="member">
               <div
@@ -331,7 +331,7 @@ export default function AboutPage() {
         <h2 className="h-section" data-reveal>Press<br/>&amp; <em>mentions.</em></h2>
         <div style={{ borderTop: '1px solid var(--color-hairline)', borderBottom: '1px solid var(--color-hairline)', padding: '48px 0', marginTop: 32 }}>
           {PRESS.map((p, i) => (
-            <div key={i} className="press-row" style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: 32, padding: '28px 0', alignItems: 'center', borderBottom: i < PRESS.length - 1 ? '1px solid var(--color-hairline-soft)' : 'none' }}>
+            <div key={i} className="press-row" style={{ borderBottom: i < PRESS.length - 1 ? '1px solid var(--color-hairline-soft)' : 'none' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 28, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>{p.src}</div>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, lineHeight: 1.25, color: 'var(--color-body)' }} dangerouslySetInnerHTML={{ __html: p.head.replace(/<em>/g, '<em style="color:var(--color-primary);font-style:italic">') }} />
@@ -344,7 +344,7 @@ export default function AboutPage() {
 
       {/* Contact */}
       <section className="section section-tight">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80, alignItems: 'start' }}>
+        <div className="contact-grid">
           <div>
             <div className="eyebrow" data-reveal>Get in touch</div>
             <h2 data-reveal style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(40px,5vw,76px)', lineHeight: 0.98, letterSpacing: '-0.02em', margin: '16px 0 0' }}>
@@ -359,7 +359,7 @@ export default function AboutPage() {
               { lbl: 'Email', name: 'founder@theworstcompany.in', href: 'mailto:founder@theworstcompany.in', desc: 'For everything — orders, press, hellos, complaints, marriage proposals.' },
               { lbl: 'Call', name: '+91 99718 13098', href: 'tel:+919971813098', desc: "Studio line. We'll usually let it ring twice while we get off a machine." },
             ].map((item) => (
-              <div key={item.lbl} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: 16, padding: '24px 0', borderBottom: '1px solid var(--color-hairline)', alignItems: 'start' }}>
+              <div key={item.lbl} className="contact-item">
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-muted)', paddingTop: 6 }}>{item.lbl}</div>
                 <div>
                   <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 22, margin: '0 0 4px' }}>
@@ -375,7 +375,7 @@ export default function AboutPage() {
 
       {/* Countdown strip */}
       <section className="section">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 64, alignItems: 'center', padding: '64px 0', borderTop: '1px solid var(--color-hairline)', borderBottom: '1px solid var(--color-hairline)' }}>
+        <div className="countdown-strip">
           <div>
             <div className="eyebrow" data-reveal style={{ marginBottom: 18 }}>Vol. 01 — The Stitch Issue</div>
             <h2 className="h-section" data-reveal>Launching<br/>18 <em>June</em> 2026.</h2>

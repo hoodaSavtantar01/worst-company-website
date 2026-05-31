@@ -144,10 +144,7 @@ export default function ServicesPage() {
     <div ref={pageRef}>
       {/* Page hero */}
       <section style={{ borderBottom: '1px solid var(--color-hairline-soft)', background: 'var(--color-surface-soft)' }}>
-        <div style={{
-          maxWidth: 'var(--page-max)', margin: '0 auto', padding: '96px var(--gutter) 80px',
-          display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 80, alignItems: 'end',
-        }} className="page-hero-inner">
+        <div className="page-hero-inner">
           <div>
             <div className="breadcrumbs" data-reveal>
               <Link href="/">Home</Link> &nbsp;/&nbsp; <span>Services</span>
@@ -180,11 +177,7 @@ export default function ServicesPage() {
       {/* Services list — locked */}
       <section className="section" style={{ position: 'relative', paddingTop: 0, paddingBottom: 0 }}>
         {SERVICES.map((svc) => (
-          <div key={svc.num} className="svc-row" style={{
-            display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 48,
-            alignItems: 'stretch', padding: '56px 0',
-            borderBottom: '1px solid var(--color-hairline)',
-          }}>
+          <div key={svc.num} className="svc-row">
             <div className="svc-copy" style={{ filter: 'blur(6px) saturate(85%)', opacity: 0.55, userSelect: 'none', pointerEvents: 'none' }}>
               <h3
                 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(36px,4.4vw,64px)', lineHeight: 0.98, letterSpacing: '-0.02em', margin: '0 0 16px', textWrap: 'balance' }}
@@ -238,7 +231,7 @@ export default function ServicesPage() {
       {/* Timeline */}
       <section style={{ background: '#15140f' }}>
         <div style={{ maxWidth: 'var(--page-max)', margin: '0 auto', padding: '96px var(--gutter)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'end', marginBottom: 56 }}>
+          <div className="timeline-head" style={{ marginBottom: 56 }}>
             <div>
               <div className="eyebrow" data-reveal>From order to doorstep</div>
               <h2
@@ -253,12 +246,9 @@ export default function ServicesPage() {
               five rooms of the studio before it earns a postage stamp.
             </p>
           </div>
-          <div
-            ref={timelineRef}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 32, position: 'relative' }}
-          >
+          <div ref={timelineRef} className="timeline-grid">
             {/* Horizontal line */}
-            <div aria-hidden style={{ position: 'absolute', top: 24, left: 0, right: 0, height: 1, background: 'var(--color-hairline)' }} />
+            <div aria-hidden className="timeline-hr" style={{ position: 'absolute', top: 24, left: 0, right: 0, height: 1, background: 'var(--color-hairline)' }} />
             {TIMELINE.map((step) => (
               <div key={step.week} className="tl-step" style={{ position: 'relative', paddingTop: 56 }}>
                 {/* Dot */}
@@ -279,7 +269,7 @@ export default function ServicesPage() {
 
       {/* FAQ */}
       <section className="section">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 64 }} className="faq-grid">
+        <div className="faq-grid">
           <div>
             <div className="eyebrow" data-reveal style={{ marginBottom: 16 }}>Things people ask</div>
             <h2 className="h-section" data-reveal>Frequently<br/><em>worried</em> about.</h2>

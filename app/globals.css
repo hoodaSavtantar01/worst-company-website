@@ -456,16 +456,53 @@ p { margin: 0; }
 .breadcrumbs a:hover { color: var(--color-ink); }
 
 /* =========================================================================
+   Section grid layouts — desktop defaults
+   (Move grid-template-columns here so @media overrides work)
+   ========================================================================= */
+
+/* — Home ----------------------------------------------------------------- */
+.hero-headline { max-width: min(640px, 54%); }
+.drop-head { display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 32px; margin-bottom: 40px; }
+.drop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.manifesto-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; max-width: var(--page-max); margin: 0 auto; padding: 120px var(--gutter); }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 48px; }
+.waitlist-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: var(--page-max); margin: 0 auto; padding: 120px var(--gutter); }
+.waitlist-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.hero-bot-bar { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+
+/* — Services ------------------------------------------------------------- */
+.page-hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end; max-width: var(--page-max); margin: 0 auto; padding: 96px var(--gutter) 80px; }
+.svc-row { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: stretch; padding: 56px 0; border-bottom: 1px solid var(--color-hairline); }
+.timeline-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; }
+.timeline-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; position: relative; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; }
+
+/* — About ---------------------------------------------------------------- */
+.about-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; padding-bottom: 56px; }
+.story-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; max-width: var(--page-max); margin: 0 auto; padding: 120px var(--gutter); }
+.story-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 56px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; max-width: var(--page-max); margin: 0 auto; padding: 80px var(--gutter); }
+.studio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+.press-row { display: grid; grid-template-columns: 200px 1fr; gap: 32px; padding: 28px 0; align-items: center; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+.contact-item { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 24px 0; border-bottom: 1px solid var(--color-hairline); align-items: start; }
+.countdown-strip { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; padding: 64px 0; border-top: 1px solid var(--color-hairline); border-bottom: 1px solid var(--color-hairline); }
+
+/* =========================================================================
    Responsive
    ========================================================================= */
 @media (max-width: 900px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-countdown { display: none; }
+  .timeline-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 @media (max-width: 760px) {
   :root { --gutter: 20px; }
   .nav-inner { height: 60px; gap: 12px; }
-  .brandmark .wm { font-size: 22px; }
+  .brandmark .wm { font-size: 20px; }
   .brandmark .wm em { display: none; }
   .section { padding: 56px var(--gutter); }
   .footer { margin-top: 56px; }
@@ -476,10 +513,45 @@ p { margin: 0; }
   .btn { height: 44px; padding: 0 18px; font-size: 14px; }
   .countdown .cell { padding: 14px 6px 12px; }
   .countdown .lab { font-size: 9px; margin-top: 6px; }
+
+  /* Home */
+  .hero-headline { max-width: 100%; }
+  .drop-head { grid-template-columns: 1fr; gap: 16px; }
+  .drop-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .manifesto-inner { grid-template-columns: 1fr; gap: 40px; padding: 64px var(--gutter); }
+  .process-grid { grid-template-columns: 1fr; gap: 32px; }
+  .waitlist-inner { grid-template-columns: 1fr; gap: 40px; padding: 80px var(--gutter); }
+  .hero-bot-bar { flex-direction: column; gap: 8px; align-items: flex-start; }
+
+  /* Services */
+  .page-hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 56px var(--gutter) 40px; }
+  .svc-row { grid-template-columns: 1fr; gap: 24px; }
+  .timeline-head { grid-template-columns: 1fr; gap: 24px; }
+  .timeline-grid { grid-template-columns: 1fr; gap: 0; }
+  .timeline-grid .timeline-hr { display: none; }
+  .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* About */
+  .about-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .story-grid { grid-template-columns: 1fr; gap: 40px; padding: 64px var(--gutter); }
+  .story-copy { grid-template-columns: 1fr; gap: 24px; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+  .studio-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .press-row { grid-template-columns: 1fr; gap: 8px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-item { grid-template-columns: 1fr; gap: 8px; }
+  .countdown-strip { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
 }
 @media (max-width: 540px) {
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .marquee-track { font-size: 18px; gap: 28px; }
+  .nav-links { display: none; }
+  .drop-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .studio-grid { grid-template-columns: 1fr; }
+  .waitlist-stats { grid-template-columns: repeat(3, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

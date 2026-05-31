@@ -206,7 +206,7 @@ export default function Home() {
           height: '100%', display: 'grid', gridTemplateRows: '1fr auto',
         }}>
           {/* Headline block */}
-          <div style={{ alignSelf: 'end', maxWidth: 'min(640px, 54%)' }}>
+          <div className="hero-headline" style={{ alignSelf: 'end' }}>
             <h1
               ref={h1Ref}
               style={{
@@ -240,7 +240,7 @@ export default function Home() {
 
           {/* Bottom bar */}
           <div ref={heroBotRef} style={{ color: '#fff', paddingTop: 32 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 24 }}>
+            <div className="hero-bot-bar">
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)' }}>
                 Launching · 18 June 2026 · 10:00 GMT
               </div>
@@ -258,7 +258,7 @@ export default function Home() {
       {/* ===== THE FIRST DROP ===== */}
       <section className="section" ref={dropRef} style={{ paddingTop: 80, paddingBottom: 80 }}>
         {/* Drop head */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', alignItems: 'end', gap: 32, marginBottom: 40 }}>
+        <div className="drop-head">
           <h2 className="h-section" data-reveal style={{ maxWidth: '14ch' }}>
             The first<br/><em>drop</em>.
           </h2>
@@ -271,7 +271,7 @@ export default function Home() {
         </div>
 
         {/* Product grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24 }} className="drop-grid">
+        <div className="drop-grid">
           {LOCKED_CARDS.map((card) => (
             <div key={card.no} className="product locked" data-reveal role="group" aria-label={`No. ${card.no} — releasing soon`}>
               <div className={`ph ${card.tone}`} style={{ aspectRatio: '4/5' }}>
@@ -299,10 +299,7 @@ export default function Home() {
         ref={manifestoRef}
         style={{ background: '#15140f' }}
       >
-        <div style={{
-          maxWidth: 'var(--page-max)', margin: '0 auto', padding: '120px var(--gutter)',
-          display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 80, alignItems: 'center',
-        }} className="manifesto-inner">
+        <div className="manifesto-inner">
           <div
             className="ph photo"
             style={{
@@ -354,7 +351,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 48, marginTop: 48 }} className="process-grid">
+        <div className="process-grid">
           {[
             { num: 'Step 01 — Draft', title: '<em>Drawn</em> on paper.', body: "We start with a pencil sketch and a one-line idea. No mood boards, no AI. If it doesn't survive a week on the studio wall, it doesn't make the drop." },
             { num: 'Step 02 — Stitch', title: 'Set on a <em>Cornely</em>.', body: 'The pattern is transferred to a 240gsm cotton blank and run through a 1953 Cornely chain-stitch machine. Average run time per shirt: 90 minutes.' },
@@ -378,10 +375,7 @@ export default function Home() {
         ref={waitlistRef}
         style={{ background: '#000', color: '#fff' }}
       >
-        <div style={{
-          maxWidth: 'var(--page-max)', margin: '0 auto', padding: '120px var(--gutter)',
-          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center',
-        }} className="waitlist-inner">
+        <div className="waitlist-inner">
           <div>
             <div className="eyebrow" data-reveal style={{ marginBottom: 24, color: 'rgba(255,255,255,0.6)' }}>Vol. 01 reservation</div>
             <h2
@@ -429,7 +423,7 @@ export default function Home() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: 18 }}>
               No spam. No marketing emails. One letter, one drop.
             </div>
-            <div style={{ marginTop: 48, display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24, color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+            <div className="waitlist-stats" style={{ marginTop: 48, color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase' }}>
               {[['4','designs'],['120','pieces'],['1','letter']].map(([n,l]) => (
                 <div key={l}>
                   <div style={{ color: '#fff', fontFamily: 'var(--font-display)', fontSize: 36, fontStyle: 'italic', letterSpacing: '-0.02em', marginBottom: 4 }}>{n}</div>
