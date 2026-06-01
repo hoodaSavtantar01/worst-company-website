@@ -539,10 +539,14 @@ p { margin: 0; }
   .countdown .cell { padding: 14px 6px 12px; }
   .countdown .lab { font-size: 9px; margin-top: 6px; }
 
-  /* Hero — model centered, semi-transparent overlay keeps text readable */
-  .hero-photo-bg { background-position: center top; }
+  .hero-photo-bg { background-position: left top; }
   .hero-veil {
-    background: rgba(8,8,9,0.48);
+    background: linear-gradient(180deg,
+      rgba(8,8,9,0.12) 0%,
+      rgba(8,8,9,0.22) 40%,
+      rgba(8,8,9,0.65) 70%,
+      rgba(8,8,9,0.88) 100%
+    );
   }
   .future-frame { aspect-ratio: auto; min-height: 340px; }
   .future-frame-body { padding: 22px 20px; }
