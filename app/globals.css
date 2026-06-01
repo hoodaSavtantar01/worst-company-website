@@ -565,8 +565,9 @@ p { margin: 0; }
   .countdown .cell { padding: 14px 6px 12px; }
   .countdown .lab { font-size: 9px; margin-top: 6px; }
 
-  /* Hero mobile — no photo, animated atmospheric light */
+  /* Hero mobile — no photo, no diagonal lines */
   .hero-photo-bg { display: none; }
+  .hero-texture { background: #0c0c0c !important; }
 
   .hero-glow {
     top: -30%; right: -25%;

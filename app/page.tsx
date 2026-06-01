@@ -146,7 +146,7 @@ export default function Home() {
         }}
       >
         {/* Background texture */}
-        <div aria-hidden="true" style={{
+        <div aria-hidden="true" className="hero-texture" style={{
           position: 'absolute', inset: 0,
           background: `radial-gradient(120% 80% at 80% 10%, rgba(255,56,92,0.18) 0%, rgba(255,56,92,0) 55%),
             radial-gradient(80% 60% at 10% 90%, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 60%),
