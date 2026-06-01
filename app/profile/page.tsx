@@ -70,7 +70,7 @@ export default function ProfilePage() {
       </div>
 
       {/* Hero + signup */}
-      <section style={{ maxWidth: 'var(--page-max)', margin: '0 auto', padding: '96px var(--gutter) 64px', display: 'grid', gridTemplateColumns: '1.05fr 1fr', gap: 80, alignItems: 'start' }}>
+      <section className="profile-hero">
         <div ref={heroRef}>
           <div data-reveal style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--color-muted)', marginBottom: 28 }}>
             <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--color-primary)', display: 'inline-block', animation: 'futurePulse 2.4s ease-out infinite' }} />
@@ -102,13 +102,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Signup card */}
-        <aside
-          ref={cardRef}
-          style={{
-            border: '1px solid var(--color-hairline)', borderRadius: 4, padding: 40,
-            position: 'sticky', top: 96, background: 'var(--color-surface-soft)',
-          }}
-        >
+        <aside ref={cardRef} className="profile-card">
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 32, lineHeight: 1.05, letterSpacing: '-0.02em', color: 'var(--color-ink)', marginBottom: 8 }}>
             Be on the <em style={{ fontStyle: 'italic', color: 'var(--color-primary)' }}>list.</em>
           </h2>
