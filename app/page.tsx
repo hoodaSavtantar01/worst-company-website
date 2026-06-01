@@ -170,18 +170,7 @@ export default function Home() {
         />
 
         {/* Pink glow */}
-        <div
-          ref={glowRef}
-          aria-hidden="true"
-          style={{
-            position: 'absolute', zIndex: 1,
-            top: '-10%', right: '-6%',
-            width: '46%', height: '70%',
-            pointerEvents: 'none',
-            background: 'radial-gradient(circle at 70% 30%, rgba(255,56,92,0.30) 0%, rgba(255,56,92,0.08) 38%, rgba(255,56,92,0) 70%)',
-            mixBlendMode: 'screen',
-          }}
-        />
+        <div ref={glowRef} aria-hidden="true" className="hero-glow" />
 
         {/* Veil */}
         <div aria-hidden="true" className="hero-veil" />

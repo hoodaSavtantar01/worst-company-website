@@ -463,13 +463,36 @@ p { margin: 0; }
 /* — Hero ----------------------------------------------------------------- */
 .hero-photo-bg {
   background-position: right center;
-  inset: -4% -3%; /* moved from inline so mobile can override */
+  inset: -4% -3%;
+}
+.hero-glow {
+  position: absolute; z-index: 1;
+  top: -10%; right: -6%;
+  width: 46%; height: 70%;
+  pointer-events: none;
+  background: radial-gradient(circle at 70% 30%, rgba(255,56,92,0.30) 0%, rgba(255,56,92,0.08) 38%, rgba(255,56,92,0) 70%);
+  mix-blend-mode: screen;
 }
 .hero-veil {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
     linear-gradient(90deg, rgba(8,8,9,0.92) 0%, rgba(8,8,9,0.55) 30%, rgba(8,8,9,0.05) 58%, rgba(8,8,9,0) 100%),
     linear-gradient(180deg, rgba(8,8,9,0) 45%, rgba(8,8,9,0.7) 100%);
+}
+
+@keyframes glowFloat {
+  0%, 100% { transform: scale(1)   translate(0%,  0%);  opacity: 0.75; }
+  35%       { transform: scale(1.14) translate(-6%,  5%);  opacity: 1;    }
+  70%       { transform: scale(0.96) translate( 4%, -4%);  opacity: 0.82; }
+}
+@keyframes glowFloat2 {
+  0%, 100% { transform: scale(1)   translate(0%,  0%);  opacity: 0.5; }
+  40%       { transform: scale(1.2)  translate( 5%,  6%);  opacity: 0.8; }
+  75%       { transform: scale(1.05) translate(-3%, -5%);  opacity: 0.6; }
+}
+@keyframes veilPulse {
+  0%, 100% { opacity: 0.85; }
+  50%       { opacity: 1;    }
 }
 .future-frame { aspect-ratio: 21/9; }
 .future-frame-body {
@@ -542,12 +565,27 @@ p { margin: 0; }
   .countdown .cell { padding: 14px 6px 12px; }
   .countdown .lab { font-size: 9px; margin-top: 6px; }
 
-  /* Hero: no photo on mobile — pink glow behind the text */
+  /* Hero mobile — no photo, animated atmospheric light */
   .hero-photo-bg { display: none; }
+
+  .hero-glow {
+    top: -30%; right: -25%;
+    width: 110%; height: 110%;
+    background: radial-gradient(ellipse at 58% 30%,
+      rgba(255,56,92,0.55) 0%,
+      rgba(220,30,70,0.25) 30%,
+      rgba(255,56,92,0.08) 55%,
+      transparent 72%);
+    animation: glowFloat 8s ease-in-out infinite;
+  }
+
+  /* second light layer via veil */
   .hero-veil {
     background:
-      radial-gradient(ellipse 100% 55% at 50% 78%, rgba(255,56,92,0.32) 0%, rgba(255,56,92,0) 68%),
-      radial-gradient(ellipse 65% 40% at 12% 25%, rgba(255,56,92,0.14) 0%, rgba(255,56,92,0) 60%);
+      radial-gradient(ellipse 70% 50% at 15% 80%, rgba(180,20,55,0.28) 0%, transparent 58%),
+      radial-gradient(ellipse 55% 40% at 85% 55%, rgba(255,56,92,0.14) 0%, transparent 55%),
+      linear-gradient(180deg, transparent 35%, rgba(8,8,9,0.65) 65%, rgba(8,8,9,0.96) 90%);
+    animation: veilPulse 9s ease-in-out infinite;
   }
   .future-frame { aspect-ratio: auto; min-height: 340px; }
   .future-frame-body { padding: 22px 20px; }
