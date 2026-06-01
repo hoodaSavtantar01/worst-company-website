@@ -539,12 +539,10 @@ p { margin: 0; }
   .countdown .cell { padding: 14px 6px 12px; }
   .countdown .lab { font-size: 9px; margin-top: 6px; }
 
-  /* Hero — model anchored left-top so face stays right-of-center on screen */
-  .hero-photo-bg { background-position: left top; }
+  /* Hero — model centered, semi-transparent overlay keeps text readable */
+  .hero-photo-bg { background-position: center top; }
   .hero-veil {
-    background:
-      linear-gradient(to right, rgba(8,8,9,0.9) 0%, rgba(8,8,9,0.6) 44%, rgba(8,8,9,0.15) 72%, rgba(8,8,9,0) 100%),
-      linear-gradient(180deg, rgba(8,8,9,0) 0%, rgba(8,8,9,0.08) 28%, rgba(8,8,9,0.78) 55%, rgba(8,8,9,0.97) 78%);
+    background: rgba(8,8,9,0.48);
   }
   .future-frame { aspect-ratio: auto; min-height: 340px; }
   .future-frame-body { padding: 22px 20px; }
