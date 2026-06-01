@@ -160,7 +160,6 @@ export default function Home() {
           className="hero-photo-bg"
           style={{
             position: 'absolute',
-            inset: '-4% -3%',
             zIndex: 1,
             backgroundImage: 'url(/assets/hero.jpg)',
             backgroundSize: 'cover',
